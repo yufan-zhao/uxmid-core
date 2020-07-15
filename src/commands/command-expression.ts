@@ -3,7 +3,7 @@ import { StringUtils } from "../common";
 import { ArgumentException } from "../exceptions";
 import { Map } from "../collections";
 import CommandOptionCollection from "./command-option-collection";
-import CommandExpressionParser from "./command-expression-parser";
+import { CommandExpressionParser } from "./command-expression-parser";
 
 /**
  * 命令表达式类，提供命令的名称路径与参数选项等信息。
@@ -102,11 +102,11 @@ export default class CommandExpression
     
     /**
      * 初始化命令表达式的新实例。
-     * @param anchor 锚定点。
-     * @param name 命令名称。
-     * @param path 命令路径。
-     * @param options 命令选项。
-     * @param args 命令参数。
+     * @param  {PathAnchor} anchor 锚定点。
+     * @param  {string} name 命令名称。
+     * @param  {string} path 命令路径。
+     * @param  {Map} options 命令选项。
+     * @param  {string[]} ...args 命令参数。
      */
     public constructor(anchor: PathAnchor, name: string, path: string, options: Map<string, string>, ...args: Array<string>)
     {

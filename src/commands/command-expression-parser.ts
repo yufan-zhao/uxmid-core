@@ -28,7 +28,7 @@ const enum CommandPairState
  * @class
  * @version 1.0.0
  */
-export default class CommandExpressionParser implements ICommandExpressionParser
+export class CommandExpressionParser implements ICommandExpressionParser
 {
     /**
      * 获取命令解析器的单实例。
@@ -233,7 +233,7 @@ export default class CommandExpressionParser implements ICommandExpressionParser
         
         if(parts && parts.size > 0)
         {
-            path = parts.values().join(".");
+            path = parts.values().join("/");
         }
         else if(!name)
         {
